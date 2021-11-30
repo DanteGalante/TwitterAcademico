@@ -9,11 +9,11 @@ class Usuario(BaseModel):
     Nombre = CharField(max_length=30)
     ApellidoPaterno  = CharField(max_length=30)
     ApellidoMaterno  = CharField(max_length=30)
-    FechaNacimiento = DateField
+    FechaNacimiento = date(2021, 3, 2)
     Email  = CharField(max_length=25)
     NombreUsuario = SmallIntegerField()
     Password = CharField(max_length=30)
-    idTipoUsuario = IntegerField
+    idTipoUsuario = SmallIntegerField()
 
     class Meta:
         db_table = 'usuario'

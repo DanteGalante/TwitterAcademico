@@ -1,8 +1,8 @@
 from peewee import *
 
 user = 'root'
-password = 'Pythonjavascript29.'
-db_name = 'twitteracademico'
+password = 'root'
+db_name = 'twitteracademicodb'
 
 conn = MySQLDatabase(
     db_name, user=user,
