@@ -17,10 +17,15 @@ def get_usuarios():
     return list_usuarios()
 
 @router_usuarios.post("/", response_model=UsuarioModel, summary="Crear un nuevo usuario")
-async def create(Nombre:str ,ApellidoPaterno:str ,ApellidoMaterno:str ,FechaNacimiento:datetime.date ,Email:str ,NombreUsuario:str ,Password:str ,idTipoUsuario:int):
-    return await create_usuario(Nombre=Nombre, ApellidoPaterno=ApellidoPaterno, ApellidoMaterno=ApellidoMaterno, FechaNacimiento=FechaNacimiento,
-     Email=Email, NombreUsuario=NombreUsuario, Password=Password, idTipoUsuario=idTipoUsuario  )
-
+async def create(nuevoUsuario:UsuarioModel):
+    return await create_usuario(Nombre=nuevoUsuario.Nombre,
+                                ApellidoPaterno=nuevoUsuario.ApellidoPaterno,
+                                ApellidoMaterno=nuevoUsuario.ApellidoMaterno,
+                                FechaNacimiento=nuevoUsuario.FechaNacimiento,
+                                Email=nuevoUsuario.Email,
+                                NombreUsuario=nuevoUsuario.NombreUsuario,
+                                Password=nuevoUsuario.Password,
+                                idTipoUsuario=nuevoUsuario.idTipoUsuario)
 
 @router_usuarios.delete(
     "/remove/{idUsuario}",

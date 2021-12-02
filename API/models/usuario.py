@@ -19,6 +19,7 @@ class Usuario(BaseModel):
         db_table = 'usuario'
 
 async def create_usuario(Nombre:str, ApellidoPaterno:str, ApellidoMaterno:str, FechaNacimiento:date, Email:str, NombreUsuario:str, Password:str, idTipoUsuario:int):
+    print(2)
     usuario_object = Usuario(
         Nombre=Nombre,
         ApellidoPaterno=ApellidoPaterno,
